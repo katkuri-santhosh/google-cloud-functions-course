@@ -29,3 +29,14 @@ pip install -r requirement.txt
 
 Go to the File --> Settings --> Click on Project --> python interpreter --> Click on settings Icon and click Add --> Select Virtual environment--> Existing Environment --> Apply
 
+# Deploying our function
+First, we have to set our project ID with the following command
+```
+gcloud config set project [YOUR PROJECT ID]
+```
+
+Then we deploy our function with  this command
+```
+gcloud functions deploy [FUNCTION NAME] --runtime python37 --trigger-http
+```
+
