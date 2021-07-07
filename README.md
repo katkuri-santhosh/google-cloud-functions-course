@@ -40,3 +40,12 @@ Then we deploy our function with  this command
 gcloud functions deploy [FUNCTION NAME] --runtime python37 --trigger-http
 ```
 
+
+
+## Deploy cloud functions with environment variables and other dependencies
+We have to create a `.env.yml` file and a `requirements.txt` file in the same directory of our `main.py` and then run the following command:
+
+```
+gcloud functions deploy send_mail --env-vars-file .env.
+yml --runtime python37 --trigger-http
+```
