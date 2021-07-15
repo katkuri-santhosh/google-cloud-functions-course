@@ -46,5 +46,5 @@ jobs:
       #uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       uses: google-github-actions/deploy-cloud-functions@main
       with:
-        name: token
+        ref: ${{ github.headref }}
         token: ${{ secrets.PYPI_API_TOKEN }}
