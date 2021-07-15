@@ -1,1 +1,5 @@
 .idea/
+virtualenv/
+.env
+emails/.env.yml
+__pycache__/
