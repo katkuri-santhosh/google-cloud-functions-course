@@ -24,13 +24,13 @@ def send_mail(request):
     from sendgrid import SendGridAPIClient
     from sendgrid.helpers.mail import Mail
 
-    if request.method != 'POST':
-        abort(405)
+    #if request.method != 'POST':
+    #    abort(405)
     # bearer_token = request.headers['Authorization'].split()[1]
-    bearer_token = get_bearer_token(request)
-    secret_key = os.environ.get('ACCESS_TOKEN')
-    if bearer_token != secret_key:
-        abort(401)
+    #bearer_token = get_bearer_token(request)
+    #secret_key = os.environ.get('ACCESS_TOKEN')
+    #if bearer_token != secret_key:
+    #    abort(401)
     request_json = request.get_json(silent=True)
     parameters = ('sender', 'receiver', 'subject', 'message')
     sender, receiver, subject, message = '', '', '', ''
