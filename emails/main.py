@@ -45,19 +45,19 @@ def send_mail(sender,receiver,subject,message):
 #         message = message
 #     else:
 # #         abort(400)
-#     message = Mail(
-#         from_email=sender,
-#         to_emails=receiver,
-#         subject=subject,
-#         html_content=message
-#     )
+    message = Mail(
+        from_email=sender,
+        to_emails=receiver,
+        subject=subject,
+        html_content=message
+    )
     #return
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-        sg.send(Mail(from_email=sender,to_emails=receiver,subject=subject,html_content=message))
+        sg.send(message)
         return 'OK', 200
 
     except Exception as e:
         return e, 400
 
-send_mail(sender= "santusub4u@gmail.com",receiver= "katkuri.santhosh@gmail.com",subject= "Testing for new cloud function to send email",message= "Hi, if you are seeing this ,thats because the cloud function was invoked")
+#send_mail(sender= "santusub4u@gmail.com",receiver= "katkuri.santhosh@gmail.com",subject= "Testing for new cloud function to send email",message= "Hi, if you are seeing this ,thats because the cloud function was invoked")
