@@ -37,10 +37,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
  
-    - name: Build package
-      run: |
-          pip install pytest
-          pytest main.py
+#     - name: Build package
+#       run: |
+#           pip install pytest
+          #pytest main.py
     - name: Publish package
       #uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       uses: google-github-actions/deploy-cloud-functions@main
