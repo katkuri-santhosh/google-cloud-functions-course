@@ -44,18 +44,18 @@ def send_mail(sender,receiver,subject,message):
 #         subject = subject
 #         message = message
 #     else:
-#         abort(400)
-    message = Mail(
-        from_email=sender,
-        to_emails=receiver,
-        subject=subject,
-        html_content=message
-    )
+# #         abort(400)
+#     message = Mail(
+#         from_email=sender,
+#         to_emails=receiver,
+#         subject=subject,
+#         html_content=message
+#     )
     print(message)
     #return
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-        sg.send(message)
+        sg.send(Mail(from_email=sender,to_emails=receiver,subject=subject,html_content=message))
         return 'OK', 200
 
     except Exception as e:
