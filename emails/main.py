@@ -54,3 +54,5 @@ def send_mail(request):
 
     except Exception as e:
         return e, 400
+
+send_mail(request)
