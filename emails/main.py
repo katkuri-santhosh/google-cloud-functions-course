@@ -35,7 +35,7 @@ def send_mail(sender,receiver,subject,message):
 #     receiver = request_json['receiver']
 #     subject = request_json['subject']
 #     message = request_json['message']
-   request_json = request.get_json(silent=True)
+ #  request_json = request.get_json(silent=True)
     #parameters = ('sender', 'receiver', 'subject', 'message')
 #     sender, receiver, subject, message = '', '', '', ''
 #     if request_json and all(k in request_json for k in parameters):
@@ -51,6 +51,7 @@ def send_mail(sender,receiver,subject,message):
         subject=subject,
         html_content=message
     )
+    print(message)
     #return
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
