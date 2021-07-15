@@ -51,6 +51,7 @@ def send_mail(sender,receiver,subject,message):
         subject=subject,
         html_content=message
     )
+    print("Im here")
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
         sg.send(message)
