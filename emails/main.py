@@ -36,15 +36,15 @@ def send_mail(sender,receiver,subject,message):
 #     subject = request_json['subject']
 #     message = request_json['message']
    # request_json = request.get_json(silent=True)
-    parameters = ('sender', 'receiver', 'subject', 'message')
-    sender, receiver, subject, message = '', '', '', ''
-    if request_json and all(k in request_json for k in parameters):
-        sender = sender
-        receiver = receiver
-        subject = subject
-        message = message
-    else:
-        abort(400)
+    #parameters = ('sender', 'receiver', 'subject', 'message')
+#     sender, receiver, subject, message = '', '', '', ''
+#     if request_json and all(k in request_json for k in parameters):
+#         sender = sender
+#         receiver = receiver
+#         subject = subject
+#         message = message
+#     else:
+#         abort(400)
     message = Mail(
         from_email=sender,
         to_emails=receiver,
