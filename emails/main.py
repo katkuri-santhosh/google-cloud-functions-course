@@ -56,7 +56,8 @@ def send_mail(sender,receiver,subject,message):
     #sg = SendGridAPIClient(os.environ.get(${{ SECRETS.SENDGRID_API_KEY'}}))
 #     sg = SendGridAPIClient(os.environ['SENDGRID_API_KEY'])
 #     sg.send(message)
-    assert 1 == 1
+    A = 1
+    assert A == 1
     #return 'OK', 200
 
 #     except Exception as e:
