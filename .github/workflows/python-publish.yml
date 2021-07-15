@@ -13,16 +13,17 @@ on:
     branches: 
     - master
 
-env:
-  PROJECT: ${{ SECRETS.RUN_PROJECT}}
-  #SENDGRID_API_KEY: ${{ SECRETS.SENDGRID_API_KEY }}
-  RUN_REGION: us-central1
-  SERVICE_NAME: send_mail
+
 
 jobs:
   setup-build-deploy:
     name: Setup, Build, and Deploy
     runs-on: windows-2016
+    env:
+      PROJECT: ${{ SECRETS.RUN_PROJECT}}
+      #SENDGRID_API_KEY: ${{ SECRETS.SENDGRID_API_KEY }}
+      RUN_REGION: us-central1
+      SERVICE_NAME: send_mail
     defaults:
       run:
         working-directory: emails
